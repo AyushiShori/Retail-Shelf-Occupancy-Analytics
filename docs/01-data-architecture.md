@@ -9,12 +9,12 @@ Client JSON  →  Azure SQL Server  →  DirectQuery  →  Power BI  →  Busine
    (raw)         (15 tables)         (live)         (10 pages)
 ```
 
-![Pipeline stages](../assets/architecture/pipeline-stages-1.png)
-![Pipeline stages continued](../assets/architecture/pipeline-stages-2.png)
+![Pipeline stages](../architecture/pipeline-stages-1.png)
+![Pipeline stages continued](../architecture/pipeline-stages-2.png)
 
 ## Stage detail
 
-![Process description](../assets/architecture/process-description.png)
+![Process description](../architecture/process-description.png)
 
 | Stage | What happened |
 |---|---|

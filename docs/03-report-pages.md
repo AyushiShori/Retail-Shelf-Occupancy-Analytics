@@ -16,7 +16,7 @@ Every page carries the same three pieces of furniture:
 - **Page navigator** down the left
 - **Clear all Filters** action button
 
-![Report canvas](../assets/report/report-canvas-region-wise.png)
+![Report canvas](../report/report-canvas-region-wise.png)
 
 ---
 

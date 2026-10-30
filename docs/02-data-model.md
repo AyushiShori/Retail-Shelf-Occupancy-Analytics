@@ -6,7 +6,7 @@ Fifteen tables sourced from the Azure SQL Server database, connected over Direct
 
 ## Logical grouping
 
-![Table groupings](../assets/model/table-groupings.png)
+![Table groupings](../model/table-groupings.png)
 
 ### Geography (4 tables)
 
@@ -44,8 +44,8 @@ classified into one of the three mutually exclusive buckets.
 | `storevisitoutput` | Per-visit shelf observations, including unbranded counts |
 | `useranalytics` | Field-staff capture activity — users, user types, image counts |
 
-![Table inventory](../assets/model/table-inventory-1.png)
-![Table inventory continued](../assets/model/table-inventory-2.png)
+![Table inventory](../model/table-inventory-1.png)
+![Table inventory continued](../model/table-inventory-2.png)
 
 ## Field usage across the report
 

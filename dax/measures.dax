@@ -1,0 +1,88 @@
+// =====================================================================
+// Retail Shelf Occupancy Analytics — measure definitions
+// Model: DirectQuery against Azure SQL Server
+//
+// STATUS: the corrected [Non-Welspun Products] below is NOT yet applied
+// to the .pbix in this repository. Run STEP 1, then STEP 2.
+// =====================================================================
+
+
+// =====================================================================
+// STEP 1 — RECONCILIATION. Run this BEFORE changing anything.
+//
+// Add these three measures in Power BI Desktop, drop them on a card on
+// any page, read the result, then delete them.
+//
+// The result of [Unclassified Check] decides whether STEP 2 is safe:
+//   = 0   -> the residual was behaving. Applying STEP 2 changes no
+//            displayed figure. Safe to apply.
+//   <> 0  -> those rows are currently inflating the competitor figure.
+//            Applying STEP 2 WILL change the 22.40% competitor share
+//            and every percentage derived from it. Re-screenshot the
+//            report and update the README figures before publishing.
+// =====================================================================
+
+NW Explicit =
+CALCULATE(
+    SUM( programdetail[count] ),
+    brand[is_welspun] = FALSE()
+)
+
+Unclassified Check =
+[Non-Welspun Products] - [NW Explicit]
+
+Blank Brand Rows =
+CALCULATE(
+    SUM( programdetail[count] ),
+    ISBLANK( brand[is_welspun] )
+)
+
+
+// =====================================================================
+// STEP 2 — THE FIX.
+//
+// In Power BI Desktop: Model view -> select [Non-Welspun Products] ->
+// select the whole expression in the formula bar -> paste the body
+// below -> Enter. Then delete the three STEP 1 measures.
+// =====================================================================
+
+Non-Welspun Products =
+CALCULATE(
+    SUM( programdetail[count] ),
+    brand[is_welspun] = FALSE()
+)
+
+// Previous definition, kept for the record. A residual: it returned
+// everything NOT flagged as the client's, which silently included rows
+// where is_welspun was BLANK, rows that failed to join to the brand
+// dimension, and any unbranded rows held in programdetail. The last
+// case double-counted against Sum(storevisitoutput[Unbranded]).
+//
+// Non-Welspun Products =
+// SUM( programdetail[count] ) - [Welspun Products]
+
+
+// =====================================================================
+// UNCHANGED MEASURES
+// =====================================================================
+
+// Client brand shelf count.
+// Classification lives on the brand dimension as a boolean flag, so
+// adding a brand to the portfolio requires no change here.
+// Folds to a SQL WHERE clause under DirectQuery.
+Welspun Products =
+CALCULATE(
+    SUM( programdetail[count] ),
+    brand[is_welspun] = TRUE()
+)
+
+
+// UNRESOLVED — resolve this before STEP 2.
+// 41 bindings across 7 pages, always displayed under non-Welspun labels
+// despite its name, and sharing three display names with
+// [Non-Welspun Products]. Read the expression in Power BI Desktop
+// (Model view -> select measure -> formula bar) and paste it here.
+// See ../docs/04-measures.md.
+//
+// Avg_Welspun_Product =
+//     <paste expression here>

@@ -84,7 +84,9 @@ Transformation and cleaning were done in **Power Query**: correcting data types,
 values, standardising category labels, and validating date and location fields before they
 reached the model.
 
-Full detail: "docs\\01-data-architecture.md"
+Full detail:\[View Full Data Architecture](docs/01-data-architecture.md)
+
+
 
 \---
 

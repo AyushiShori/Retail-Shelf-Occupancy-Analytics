@@ -9,7 +9,7 @@ Azure-hosted SQL Server, a fifteen-table model, and a navigation-driven report d
 sales leadership rather than for analysts.
 
 **Headline result:** across the observed period, unbranded product occupied **68.38%** of
-measured shelf space, competitor brands **22.40%**, and the client brand **9.22%** — a
+measured shelf space, competitor brands **22.40%**, and the client brand **9.22%** , a
 visibility gap that the report then localises down to individual stores.
 
 ---

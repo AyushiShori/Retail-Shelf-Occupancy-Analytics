@@ -1,4 +1,4 @@
-# Retail Shelf Occupancy Analytics — Power BI
+# Retail Shelf Occupancy Analytics- Microsoft Azure & Power BI
 
 A ten-page Power BI report that measures how much retail shelf space a national home-textiles
 brand holds against its competitors and against unbranded stock, across zones, regions, areas,

@@ -41,7 +41,7 @@ winning**.
 
 The question the business needed answered was narrow and operational:
 
-> *In any given region, area, city or store — what share of visible shelf is ours, what share is
+> *In any given region, area, city or store what share of visible shelf is ours, what share is
 > the competition's, and where is the gap worst?*
 
 Answering it converts a pile of store-visit photographs into a ranked list of stores where a
